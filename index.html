@@ -3,18 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Beta | Physical Therapy & Movement</title>
+    <title>Project Beta | Physical Therapy & Performance</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #C5A059; --dark: #121212; --light: #ffffff; --gray: #f9f9f9; }
         * { box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; margin: 0; color: var(--dark); line-height: 1.6; background: var(--light); scroll-behavior: smooth; }
         
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; background: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
-        .btn-book { background: var(--dark); color: #fff; padding: 12px 28px; text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; border-radius: 2px; border: none; }
-        .btn-book:hover { background: var(--accent); cursor: pointer; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 8%; background: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
+        
+        .brand { display: flex; align-items: center; text-decoration: none; gap: 15px; }
+        .brand-text { display: flex; flex-direction: column; line-height: 1; }
+        .brand-text .project { color: var(--dark); font-weight: 900; font-size: 1.5rem; text-transform: uppercase; letter-spacing: -1px; }
+        .brand-text .beta { color: var(--accent); font-weight: 900; font-size: 1.5rem; text-transform: uppercase; letter-spacing: -1px; margin-top: -2px; }
+        .logo-img { height: 50px; width: auto; }
+
+        .nav-links { display: flex; gap: 10px; align-items: center; }
+        
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            font-weight: 700; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            padding: 10px 15px;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        .nav-links a:hover { 
+            background: var(--accent); 
+            color: var(--dark); 
+        }
+
+        .btn-book { 
+            background: var(--dark); 
+            color: #fff; 
+            padding: 12px 28px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            transition: 0.3s; 
+            border-radius: 2px; 
+            border: none;
+            display: inline-block;
+        }
+        .btn-book:hover { 
+            background: var(--accent); 
+            color: var(--dark); 
+            cursor: pointer; 
+        }
 
         .hero { padding: 100px 8%; background: var(--light); border-bottom: 1px solid #eee; }
         .hero-label { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
@@ -23,6 +61,7 @@
 
         .about-me { padding: 100px 8%; background: var(--gray); display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .about-me h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; margin-top: 0; }
+        .profile-img { width: 100%; max-width: 450px; height: auto; border-radius: 4px; border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         
         .philosophy { padding: 80px 8%; background: var(--dark); color: #fff; text-align: center; }
         .philosophy h2 { font-size: 2rem; color: var(--accent); margin-bottom: 20px; }
@@ -40,7 +79,6 @@
 
         .contact { padding: 100px 8%; text-align: center; }
         .contact h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; margin-bottom: 10px; }
-        
         form { max-width: 600px; margin: 40px auto; background: var(--gray); padding: 40px; border: 1px solid #eee; border-radius: 4px; text-align: left; }
         input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 2px; font-family: inherit; margin-bottom: 20px; background: #fff; font-size: 1rem; }
         label { display: block; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; font-size: 0.75rem; color: #333; }
@@ -56,8 +94,12 @@
 <body>
 
     <nav>
-        <a href="index.html">
-            <img src="logo.png" alt="Project Beta Logo" style="height: 70px; width: auto;">
+        <a href="index.html" class="brand">
+            <div class="brand-text">
+                <span class="project">Project</span>
+                <span class="beta">Beta</span>
+            </div>
+            <img src="logo.png" alt="Logo" class="logo-img">
         </a>
         <div class="nav-links">
             <a href="#about">About</a>
@@ -80,8 +122,8 @@
             <p>I’m Stephen Kiraly, a <b>DPT Student</b> specializing in the unique demands of vertical and mountain sports. My approach combines clinical evidence with a deep understanding of climbing biomechanics.</p>
             <p>Based in Seattle, I focus on empowering athletes through specific loading protocols and movement education to ensure they don't just recover, but improve.</p>
         </div>
-        <div style="background: #eee; height: 400px; display: flex; align-items: center; justify-content: center; color: #888; border: 1px solid #ddd;">
-            [Insert Your Photo Here]
+        <div>
+            <img src="profile.jpg" alt="Stephen Kiraly" class="profile-img">
         </div>
     </section>
 
@@ -113,26 +155,25 @@
     <section class="specialties">
         <span class="hero-label">Clinical Focus</span>
         <div class="spec-list">
-            <div class="spec-item">Climbing Mechanics</div>
+            <div class="spec-item">Shoulder & Elbow Injuries</div>
+            <div class="spec-item">Finger & Wrist Injuries</div>
             <div class="spec-item">Foot & Ankle Specialist</div>
-            <div class="spec-item">Pulley & Hand Health</div>
-            <div class="spec-item">Upper Extremity Loading</div>
-            <div class="spec-item">Return to Sport Testing</div>
+            <div class="spec-item">Running Pain</div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <h2>Start Your Project</h2>
-        <p>Fill out the intake below and I will reach out within 24 hours to schedule a time.</p>
+        <p>Fill out the intake below and I will reach out within 24 hours.</p>
         
         <form action="https://formspree.io/f/maqdobwz" method="POST">
             <label>Full Name</label>
             <input type="text" name="name" required placeholder="Full Name">
             
-            <label>6. Email Address</label>
+            <label>Email Address</label>
             <input type="email" name="_replyto" required placeholder="Email Address">
 
-            <label>7. Phone Number</label>
+            <label>Phone Number</label>
             <input type="tel" name="phone" placeholder="(555) 555-5555">
 
             <label>1. Quick 30,000ft view of what you are dealing with?</label>

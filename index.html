@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Beta | Elite Physical Therapy & Performance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #C5A059; /* Gold accent for the 'King' theme */
+            --dark: #121212;
+            --light: #ffffff;
+            --gray: #f9f9f9;
+        }
 
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--dark); line-height: 1.6; background: var(--light); scroll-behavior: smooth; }
+        
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
+        .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -1px; text-transform: uppercase; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+        .btn-book { background: var(--dark); color: #fff; padding: 12px 28px; text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
+        .btn-book:hover { background: var(--accent); }
+
+        /* Hero Section */
+        .hero { padding: 120px 8%; background: var(--light); border-bottom: 1px solid #eee; }
+        .hero-label { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
+        .hero h1 { font-size: clamp(3.5rem, 10vw, 6rem); line-height: 0.9; margin: 0; font-weight: 900; letter-spacing: -4px; text-transform: uppercase; }
+        .hero p { font-size: 1.3rem; max-width: 600px; margin: 40px 0; color: #444; }
+
+        /* Philosophy / About */
+        .about { padding: 100px 8%; background: var(--dark); color: #fff; }
+        .about h2 { font-size: 2.5rem; margin-bottom: 30px; letter-spacing: -1px; }
+        .about p { max-width: 800px; font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px; }
+        .stats { display: flex; gap: 50px; border-top: 1px solid #333; padding-top: 40px; }
+        .stat-item b { display: block; font-size: 1.5rem; color: var(--accent); }
+
+        /* Services Section */
+        .services { padding: 100px 8%; background: var(--gray); }
+        .section-header { margin-bottom: 60px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: #fff; padding: 50px; border: 1px solid #eee; position: relative; transition: 0.3s; }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .card h3 { font-size: 1.4rem; text-transform: uppercase; margin-top: 0; letter-spacing: 1px; }
+        .card p { font-size: 1rem; color: #666; margin: 20px 0 30px; }
+        .price { font-weight: 900; color: var(--dark); font-size: 1.2rem; display: block; border-top: 1px solid #eee; padding-top: 20px; }
+
+        /* Treat Grid (The Specialization) */
+        .treat { padding: 80px 8%; }
+        .treat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
+        .treat-item { padding: 30px; background: #fff; border: 1px solid #eee; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+        footer { padding: 80px 8%; background: var(--light); text-align: left; font-size: 0.8rem; color: #999; border-top: 1px solid #eee; }
+        .footer-logo { font-weight: 900; color: var(--dark); margin-bottom: 20px; display: block; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .treat-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PROJECT <span>BETA</span></div>
+        <div class="nav-links">
+            <a href="#about">Philosophy</a>
+            <a href="#services">Services</a>
+            <a href="YOUR_CALENDLY_LINK_HERE" class="btn-book">Book Now</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <span class="hero-label">Physical Therapy & Performance</span>
+        <h1>REHAB THE<br>PROJECT.</h1>
+        <p>The specialized movement beta for climbers, runners, and mountain athletes. Cracking the code to your performance and resilience.</p>
+        <a href="YOUR_CALENDLY_LINK_HERE" class="btn-book" style="padding: 20px 45px; font-size: 1rem;">Access Your Beta</a>
+    </header>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>THE GOLD STANDARD OF CARE</h2>
+            <p>At Project Beta, your recovery is treated like a project. We combine high-level clinical diagnostics with the specific movement demands of vertical and mountain sports. No generic exercises. Just the beta you need to send.</p>
+            <div class="stats">
+                <div class="stat-item"><b>1-on-1</b> Care</div>
+                <div class="stat-item"><b>Elite</b> Affiliation</div>
+                <div class="stat-item"><b>DPT</b> Student, UNLV</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="section-header">
+            <span class="hero-label">Available Sessions</span>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>The Discovery Call</h3>
+                <p>A 15-minute screen to discuss your project, your pain, and the fastest path to getting you back on the wall or trail.</p>
+                <span class="price">FREE</span>
+            </div>
+            <div class="card">
+                <h3>Evaluation & Beta</h3>
+                <p>Full 1:1 biomechanical assessment and movement analysis. You walk away with a clear roadmap for recovery.</p>
+                <span class="price">60 MINS</span>
+            </div>
+            <div class="card">
+                <h3>The Send Pack</h3>
+                <p>Comprehensive ongoing support with weekly 1:1 sessions and digital programming for maximum accountability.</p>
+                <span class="price">ELITE PERFORMANCE</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="treat">
+        <span class="hero-label" style="text-align: center; margin-bottom: 40px;">Specialties</span>
+        <div class="treat-grid">
+            <div class="treat-item">Climbing Mechanics</div>
+            <div class="treat-item">Running Gait Analysis</div>
+            <div class="treat-item">Cycling Power Biomechanics</div>
+            <div class="treat-item">Pulley & Hand Injuries</div>
+            <div class="treat-item">Shoulder Stability</div>
+            <div class="treat-item">Lower Extremity Power</div>
+        </div>
+    </section>
+
+    <footer>
+        <span class="footer-logo">PROJECT BETA PHYSICAL THERAPY</span>
+        Stephen Kiraly, PT | The Climbing Doctor Affiliate Network<br>
+        Based in Las Vegas, NV | Serving the Outdoor Community.<br><br>
+        &copy; 2026 Project Beta. All rights reserved.
+    </footer>
+
+</body>
+</html>

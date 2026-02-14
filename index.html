@@ -26,33 +26,31 @@
         .btn-main { background: var(--dark); color: #fff; padding: 12px 28px; text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; border-radius: 2px; border: none; display: inline-block; }
         .btn-main:hover, .btn-nav:hover { background: var(--accent); color: var(--dark); border-color: var(--accent); cursor: pointer; }
 
-        .hero { padding: 80px 8%; background: var(--light); border-bottom: 1px solid #eee; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+        /* Hero with Action Image */
+        .hero { padding: 80px 8%; background: var(--light); border-bottom: 1px solid #eee; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
         .hero-label { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
         .hero h1 { font-size: clamp(3rem, 8vw, 5rem); line-height: 0.9; margin: 0; font-weight: 900; letter-spacing: -3px; text-transform: uppercase; }
         .hero p { font-size: 1.2rem; margin: 30px 0; color: #444; }
-        .hero-logo-large { width: 100%; max-width: 400px; height: auto; display: block; margin: 0 auto; opacity: 0.9; }
+        .hero-img-main { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
         .about-me { padding: 100px 8%; background: var(--gray); display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .about-me h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; margin-top: 0; }
-        .profile-img { width: 100%; max-width: 450px; height: auto; border-radius: 4px; border: 1px solid #ddd; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .profile-img { width: 100%; max-width: 450px; height: auto; border-radius: 4px; border: 1px solid #ddd; }
         
-        .philosophy { padding: 80px 8%; background: var(--dark); color: #fff; text-align: center; }
-        .philosophy h2 { font-size: 2rem; color: var(--accent); margin-bottom: 20px; }
-        .philosophy p { max-width: 700px; margin: 0 auto; font-size: 1.1rem; opacity: 0.9; }
-
         .services { padding: 100px 8%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: #fff; padding: 40px; border: 1px solid #eee; transition: 0.3s; }
-        .card h3 { font-size: 1.3rem; text-transform: uppercase; margin-top: 0; }
-        .price { font-weight: 900; color: var(--accent); display: block; margin-top: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+        .card { background: #fff; padding: 30px; border: 1px solid #eee; transition: 0.3s; display: flex; flex-direction: column; }
+        .card h3 { font-size: 1.1rem; text-transform: uppercase; margin-top: 0; min-height: 3rem; }
+        .card p { font-size: 0.9rem; flex-grow: 1; }
+        .price { font-weight: 900; color: var(--accent); display: block; margin-top: 20px; font-size: 1.1rem; }
 
-        .specialties { padding: 60px 8%; background: var(--gray); text-align: center; }
-        .spec-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
-        .spec-item { padding: 15px 25px; background: #fff; border: 1px solid #ddd; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+        .faq { padding: 100px 8%; background: #fff; border-top: 1px solid #eee; }
+        .faq h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; text-align: center; margin-bottom: 40px; }
+        .faq-placeholder { border: 2px dashed #ddd; padding: 40px; text-align: center; color: #999; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; }
 
-        .contact { padding: 100px 8%; text-align: center; }
+        .contact { padding: 100px 8%; text-align: center; background: var(--gray); }
         .contact h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; margin-bottom: 10px; }
-        form { max-width: 600px; margin: 40px auto; background: var(--gray); padding: 40px; border: 1px solid #eee; border-radius: 4px; text-align: left; }
+        form { max-width: 600px; margin: 40px auto; background: #fff; padding: 40px; border: 1px solid #eee; border-radius: 4px; text-align: left; }
         input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 2px; font-family: inherit; margin-bottom: 20px; background: #fff; font-size: 1rem; }
         label { display: block; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; font-size: 0.75rem; color: #333; }
 
@@ -64,7 +62,6 @@
 
         @media (max-width: 900px) {
             .hero { grid-template-columns: 1fr; text-align: center; }
-            .hero-logo-large { max-width: 250px; margin-top: 40px; }
             .about-me { grid-template-columns: 1fr; }
             .nav-links { display: none; }
             footer { flex-direction: column; gap: 20px; text-align: center; }
@@ -84,6 +81,7 @@
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#services">Services</a>
+            <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
             <a href="#contact" class="btn-nav">Book Now</a>
         </div>
@@ -97,7 +95,7 @@
             <a href="#contact" class="btn-main" style="padding: 18px 40px;">Start Your Intake</a>
         </div>
         <div>
-            <img src="logo.png" alt="Project Beta Logo" class="hero-logo-large">
+            <img src="IMG_8270.JPG" alt="Climbing Movement" class="hero-img-main">
         </div>
     </header>
 
@@ -114,38 +112,35 @@
         </div>
     </section>
 
-    <section class="philosophy">
-        <h2>THE BETA METHOD</h2>
-        <p>Recovery is a sequence. We break down the mechanics of your "project" to find the root cause of inefficiency. From finger pulley health to complex foot and ankle mechanics, we build the map to your send.</p>
-    </section>
-
     <section id="services" class="services">
         <div class="grid">
             <div class="card">
                 <h3>Discovery Call</h3>
-                <p>A brief 1:1 screen to discuss your project and ensure this specialized approach is the right fit.</p>
+                <p>A brief 15-minute 1:1 screen to discuss your project and ensure this specialized approach is the right fit.</p>
                 <span class="price">FREE</span>
             </div>
             <div class="card">
-                <h3>Full Evaluation</h3>
-                <p>Complete clinical assessment and movement analysis. We identify the crux and build your rehab roadmap.</p>
-                <span class="price">INITIAL VISIT</span>
+                <h3>Initial Evaluation</h3>
+                <p>Complete clinical assessment and movement analysis. We identify the crux and build your roadmap to recovery.</p>
+                <span class="price">$120</span>
+            </div>
+            <div class="card">
+                <h3>Plan of Care</h3>
+                <p>Ongoing follow-up sessions focused on progressive loading, performance metrics, and long-term resilience.</p>
+                <span class="price">$100 / Session</span>
             </div>
             <div class="card">
                 <h3>The Send Pack</h3>
-                <p>Ongoing support focused on progressive loading, performance metrics, and long-term resilience.</p>
-                <span class="price">FOLLOW-UP</span>
+                <p>The ultimate support. Monthly check-ins for anything related to training, prehab, or injury management.</p>
+                <span class="price">Customizable</span>
             </div>
         </div>
     </section>
 
-    <section class="specialties">
-        <span class="hero-label">Clinical Focus</span>
-        <div class="spec-list">
-            <div class="spec-item">Shoulder & Elbow Injuries</div>
-            <div class="spec-item">Finger & Wrist Injuries</div>
-            <div class="spec-item">Foot & Ankle Specialist</div>
-            <div class="spec-item">Running Pain</div>
+    <section id="faq" class="faq">
+        <h2>FAQ</h2>
+        <div class="faq-placeholder">
+            FAQ Section coming soon. Questions about scheduling, insurance, or what to wear? I'll be adding those answers here!
         </div>
     </section>
 
@@ -159,23 +154,15 @@
             <input type="email" name="_replyto" required placeholder="Email Address">
             <label>Phone Number</label>
             <input type="tel" name="phone" placeholder="(555) 555-5555">
-            <label>1. Quick 30,000ft view of what you are dealing with?</label>
-            <textarea name="30k_view" rows="3" required placeholder="Summary of the issue..."></textarea>
-            <label>2. What have you tried so far?</label>
-            <textarea name="tried_so_far" rows="3" placeholder="Rest, ice, other specialists, etc."></textarea>
-            <label>3. Current Symptoms</label>
-            <textarea name="symptoms" rows="3" required placeholder="Describe the pain or limitation..."></textarea>
-            <label>4. What are your goals?</label>
-            <input type="text" name="goals" placeholder="e.g. Climbing V6 again, pain-free hiking">
-            <label>5. Session Preference</label>
+            <label>Current Symptoms/Goals</label>
+            <textarea name="symptoms" rows="4" required placeholder="What are you working through?"></textarea>
+            <label>Session Preference</label>
             <select name="preference" required>
                 <option value="" disabled selected>Select an option</option>
                 <option value="Online">Online / Remote</option>
                 <option value="In-person: Fremont SBP">In-person: Fremont SBP</option>
                 <option value="In-person: University District SBP">In-person: University District SBP</option>
             </select>
-            <label>General Availability</label>
-            <input type="text" name="availability" placeholder="e.g. Weekdays after 5pm">
             <button type="submit" class="btn-main" style="width: 100%;">Send Inquiry</button>
         </form>
     </section>

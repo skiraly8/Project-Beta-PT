@@ -45,27 +45,35 @@
 
         .testimonials { padding: 100px 8%; background: var(--dark); color: #fff; position: relative; overflow: hidden; }
         .testimonials h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; text-align: center; margin-bottom: 40px; color: var(--accent); }
+        .slider-wrapper { overflow: hidden; width: 100%; }
         .slider-container { display: flex; transition: transform 0.5s ease-in-out; }
         .testimonial-item { min-width: 100%; padding: 0 15%; text-align: center; box-sizing: border-box; }
         .testimonial-text { font-size: 1.5rem; font-style: italic; margin-bottom: 20px; line-height: 1.4; }
         .testimonial-author { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); }
-
-        .slider-btn { position: absolute; top: 55%; transform: translateY(-50%); background: rgba(255,255,255,0.1); color: white; border: none; padding: 20px; cursor: pointer; font-size: 2rem; transition: 0.3s; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; }
+        .slider-btn { position: absolute; top: 55%; transform: translateY(-50%); background: rgba(255,255,255,0.1); color: white; border: none; padding: 20px; cursor: pointer; font-size: 2rem; transition: 0.3s; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10; opacity: 0; }
         .testimonials:hover .slider-btn { opacity: 1; }
         .slider-btn:hover { background: var(--accent); color: var(--dark); }
         .prev { left: 5%; }
         .next { right: 5%; }
 
+        /* FAQ Accordion Styles */
         .faq { padding: 100px 8%; background: #fff; border-top: 1px solid #eee; }
         .faq h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; text-align: center; margin-bottom: 40px; }
-        .faq-placeholder { border: 2px dashed #ddd; padding: 40px; text-align: center; color: #999; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid #eee; }
+        .faq-question { width: 100%; padding: 25px 0; background: none; border: none; text-align: left; font-size: 1rem; font-weight: 700; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question:hover { color: var(--accent); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.3s ease-in-out; font-size: 1rem; color: #555; }
+        .faq-answer p { padding-bottom: 20px; margin: 0; }
+        .faq-question::after { content: '+'; font-size: 1.2rem; color: var(--accent); transition: transform 0.3s; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-item.active .faq-answer { max-height: 500px; }
 
         .contact { padding: 100px 8%; text-align: center; background: var(--gray); }
         .contact h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; margin-bottom: 10px; }
         form { max-width: 600px; margin: 40px auto; background: #fff; padding: 40px; border: 1px solid #eee; border-radius: 4px; text-align: left; }
         input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 2px; font-family: inherit; margin-bottom: 20px; background: #fff; font-size: 1rem; }
         label { display: block; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; font-size: 0.75rem; color: #333; }
-        
         #email-field, #phone-field { display: none; }
 
         footer { padding: 50px 8%; background: #fff; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
@@ -106,7 +114,7 @@
         <div>
             <span class="hero-label">Seattle, WA</span>
             <h1>REHAB THE<br>PROJECT.</h1>
-            <p>Expert movement beta for climbers, runners, and anyone looking to get back out to what they love. Specialized care from a Doctor of Physical Therapy 3rd year student to get you back out there!</p>
+            <p>Expert movement beta for climbers, runners, and anyone looking to get back out to what they love. Specialized care from a Doctor of Physical Therapy 3rd year student.</p>
             <a href="#contact" class="btn-main" style="padding: 18px 40px;">Start Your Intake</a>
         </div>
         <div>
@@ -158,28 +166,62 @@
 
     <section id="testimonials" class="testimonials">
         <h2>Client Reviews</h2>
-        <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-        <div class="slider-container" id="slider">
-            <div class="testimonial-item">
-                <p class="testimonial-text">"Stephen's understanding of ankle biomechanics was a game changer. I was back to running much sooner than I had every hoped for!"</p>
-                <p class="testimonial-author">— Sophia B.</p>
-            </div>
-            <div class="testimonial-item">
-                <p class="testimonial-text">Coming soon</p>
-                <p class="testimonial-author">— Coming soon</p>
-            </div>
-            <div class="testimonial-item">
-                <p class="testimonial-text">Coming soon</p>
-                <p class="testimonial-author">— Coming soon</p>
+        <button class="slider-btn prev" onclick="moveSlide(-1)" aria-label="Previous Review">&#10094;</button>
+        <div class="slider-wrapper">
+            <div class="slider-container" id="slider">
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Stephen's understanding of ankle biomechanics was a game changer. I was back to running much sooner than I had ever hoped for!"</p>
+                    <p class="testimonial-author">— Sophia B.</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Coming soon"</p>
+                    <p class="testimonial-author">— Coming soon</p>
+                </div>
             </div>
         </div>
-        <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+        <button class="slider-btn next" onclick="moveSlide(1)" aria-label="Next Review">&#10095;</button>
     </section>
 
     <section id="faq" class="faq">
         <h2>FAQ</h2>
-        <div class="faq-placeholder">
-            FAQ Section coming soon. Questions about scheduling, insurance, or what to wear? I'll be adding those answers here!
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Why should I come to Project Beta?</button>
+                <div class="faq-answer">
+                    <p>TBD</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do you take insurance?</button>
+                <div class="faq-answer">
+                    <p>Project Beta is an out-of-network provider and does not accept insurance. We welcome clients to pay with: Credit, debit, venmo, and zelle.</p>
+                    <p>Clients will be offered an itemized receipt of their session (a superbill) that they may submit to their insurance company for reimbursement if they have out-of-network benefits. A superbill is a detailed billing statement that includes ICD-10 codes, CPT codes, total charges, details about the provider, and more.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What should I wear?</button>
+                <div class="faq-answer">
+                    <p>Wear what you do your sport in!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What services do you offer?</button>
+                <div class="faq-answer">
+                    <p>TBD</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do I have to be a climber?</button>
+                <div class="faq-answer">
+                    <p>No! We will take all individuals regardless of if you run ultramarathons or do underwater basket weaving!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What will my initial appointment look like?</button>
+                <div class="faq-answer">
+                    <p>TBD</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -256,6 +298,14 @@
             currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
             slider.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 </html>

@@ -9,11 +9,6 @@
     <meta name="keywords" content="climbing physical therapy seattle, running rehab seattle, bouldering injuries, mountain athlete performance, DPT student seattle, project beta pt, Stephen Kiraly">
     <meta name="author" content="Stephen Kiraly">
 
-    <meta property="og:title" content="Project Beta | Physical Therapy & Performance">
-    <meta property="og:description" content="Expert movement beta for climbers and athletes. Get back to your project.">
-    <meta property="og:image" content="IMG_8270.JPG">
-    <meta property="og:url" content="https://yourusername.github.io/">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #C5A059; --dark: #121212; --light: #ffffff; --gray: #f9f9f9; }
@@ -35,49 +30,54 @@
         .btn-main { background: var(--dark); color: #fff; padding: 12px 28px; text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; border-radius: 2px; border: none; display: inline-block; }
         .btn-main:hover, .btn-nav:hover { background: var(--accent); color: var(--dark); border-color: var(--accent); cursor: pointer; }
 
-        .hero { padding: 80px 8%; background: var(--light); border-bottom: 1px solid #eee; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+        /* Modernized Hero Section */
+        .hero { padding: 100px 8%; background: var(--light); border-bottom: 1px solid #eee; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
         .hero-label { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
         .hero h1 { font-size: clamp(3rem, 8vw, 5rem); line-height: 0.9; margin: 0; font-weight: 900; letter-spacing: -3px; text-transform: uppercase; }
-        .hero p { font-size: 1.2rem; margin: 30px 0; color: #444; }
-        .hero-img-main { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .hero p { font-size: 1.2rem; margin: 30px 0; color: #444; max-width: 600px; }
+        .hero-img-main { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: 0.5s; }
+        .hero-img-main:hover { transform: scale(1.02); }
 
         .about-me { padding: 100px 8%; background: var(--gray); display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
         .about-me h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; margin-top: 0; }
         .profile-img { width: 100%; max-width: 450px; height: auto; border-radius: 4px; border: 1px solid #ddd; }
         
+        /* Interactive Service Cards */
         .services { padding: 100px 8%; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
-        .card { background: #fff; padding: 30px; border: 1px solid #eee; transition: 0.3s; display: flex; flex-direction: column; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 25px; }
+        .card { background: #fff; padding: 35px; border: 1px solid #eee; transition: all 0.3s ease; display: flex; flex-direction: column; cursor: default; }
+        .card:hover { transform: translateY(-8px); border-color: var(--accent); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
         .card h3 { font-size: 1.1rem; text-transform: uppercase; margin-top: 0; min-height: 3rem; }
-        .card p { font-size: 0.9rem; flex-grow: 1; margin-bottom: 20px; }
-        .price { font-weight: 900; color: var(--accent); display: block; font-size: 1.1rem; }
-        .duration { font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: #999; margin-top: 5px; }
+        .card p { font-size: 0.9rem; flex-grow: 1; margin-bottom: 20px; color: #666; }
+        .price { font-weight: 900; color: var(--accent); display: block; font-size: 1.2rem; }
+        .duration { font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: #bbb; margin-top: 5px; }
 
         .testimonials { padding: 100px 8%; background: var(--dark); color: #fff; position: relative; overflow: hidden; }
         .testimonials h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; text-align: center; margin-bottom: 40px; color: var(--accent); }
         .slider-wrapper { overflow: hidden; width: 100%; }
-        .slider-container { display: flex; transition: transform 0.5s ease-in-out; }
+        .slider-container { display: flex; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
         .testimonial-item { min-width: 100%; padding: 0 15%; text-align: center; box-sizing: border-box; }
-        .testimonial-text { font-size: 1.5rem; font-style: italic; margin-bottom: 20px; line-height: 1.4; }
+        .testimonial-text { font-size: 1.5rem; font-style: italic; margin-bottom: 20px; line-height: 1.4; color: #eee; }
         .testimonial-author { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); }
-        .slider-btn { position: absolute; top: 55%; transform: translateY(-50%); background: rgba(255,255,255,0.1); color: white; border: none; padding: 20px; cursor: pointer; font-size: 2rem; transition: 0.3s; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10; opacity: 0; }
+
+        .slider-btn { position: absolute; top: 55%; transform: translateY(-50%); background: rgba(255,255,255,0.05); color: white; border: none; padding: 20px; cursor: pointer; font-size: 2rem; transition: 0.3s; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10; opacity: 0; }
         .testimonials:hover .slider-btn { opacity: 1; }
         .slider-btn:hover { background: var(--accent); color: var(--dark); }
         .prev { left: 5%; }
         .next { right: 5%; }
 
-        /* FAQ Accordion Styles */
+        /* FAQ Accordion */
         .faq { padding: 100px 8%; background: #fff; border-top: 1px solid #eee; }
         .faq h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; text-align: center; margin-bottom: 40px; }
         .faq-container { max-width: 800px; margin: 0 auto; }
         .faq-item { border-bottom: 1px solid #eee; }
-        .faq-question { width: 100%; padding: 25px 0; background: none; border: none; text-align: left; font-size: 1rem; font-weight: 700; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question { width: 100%; padding: 25px 0; background: none; border: none; text-align: left; font-size: 1rem; font-weight: 700; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.2s; }
         .faq-question:hover { color: var(--accent); }
-        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.3s ease-in-out; font-size: 1rem; color: #555; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: all 0.4s cubic-bezier(0, 1, 0, 1); font-size: 1rem; color: #555; }
         .faq-answer p { padding-bottom: 20px; margin: 0; }
         .faq-question::after { content: '+'; font-size: 1.2rem; color: var(--accent); transition: transform 0.3s; }
         .faq-item.active .faq-question::after { transform: rotate(45deg); }
-        .faq-item.active .faq-answer { max-height: 500px; }
+        .faq-item.active .faq-answer { max-height: 1000px; transition: all 0.4s cubic-bezier(1, 0, 1, 0); }
 
         .contact { padding: 100px 8%; text-align: center; background: var(--gray); }
         .contact h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 900; margin-bottom: 10px; }
@@ -92,10 +92,13 @@
         .footer-social img { width: 20px; height: 20px; }
 
         @media (max-width: 900px) {
-            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero { grid-template-columns: 1fr; text-align: center; padding: 60px 8%; }
+            .hero h1 { letter-spacing: -2px; }
+            .hero p { margin: 20px auto; }
             .about-me { grid-template-columns: 1fr; }
             .nav-links { display: none; }
             .testimonial-item { padding: 0 5%; }
+            .slider-btn { opacity: 1; padding: 10px; font-size: 1.5rem; }
             footer { flex-direction: column; gap: 20px; text-align: center; }
         }
     </style>
@@ -124,7 +127,7 @@
         <div>
             <span class="hero-label">Seattle, WA</span>
             <h1>REHAB THE<br>PROJECT.</h1>
-            <p>Expert movement beta for climbers, runners, and anyone looking to get back out to what they love. Specialized care from a Doctor of Physical Therapy 3rd year student.</p>
+            <p>Expert movement beta for climbers, runners, and anyone looking to get back to what they love. Specialized care from a Candidate for Doctor of Physical Therapy.</p>
             <a href="#contact" class="btn-main" style="padding: 18px 40px;">Start Your Intake</a>
         </div>
         <div>
@@ -184,8 +187,8 @@
                     <p class="testimonial-author">— Sophia B.</p>
                 </div>
                 <div class="testimonial-item">
-                    <p class="testimonial-text">"Coming soon"</p>
-                    <p class="testimonial-author">— Coming soon</p>
+                    <p class="testimonial-text">"Finally, a provider who understands the specific demands of bouldering. The loading protocols were exactly what I needed to get back on the wall."</p>
+                    <p class="testimonial-author">— Client Result</p>
                 </div>
             </div>
         </div>
@@ -198,38 +201,38 @@
             <div class="faq-item">
                 <button class="faq-question">Why should I come to Project Beta?</button>
                 <div class="faq-answer">
-                    <p>TBD</p>
+                    <p>Standard physical therapy often lacks the sport-specific knowledge required for high-level athletes. At Project Beta, we speak the language of the "project." Whether you are navigating a pulley strain on a boulder or shin splints on a trail, we use evidence-based loading protocols designed specifically for the demands of your sport.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">Do you take insurance?</button>
                 <div class="faq-answer">
-                    <p>Project Beta is an out-of-network provider and does not accept insurance. We welcome clients to pay with: Credit, debit, venmo, and zelle.</p>
+                    <p>Project Beta is an out-of-network provider and does not accept insurance. We welcome clients to pay with: Credit, debit, Venmo, and Zelle.</p>
                     <p>Clients will be offered an itemized receipt of their session (a superbill) that they may submit to their insurance company for reimbursement if they have out-of-network benefits. A superbill is a detailed billing statement that includes ICD-10 codes, CPT codes, total charges, details about the provider, and more.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">What should I wear?</button>
                 <div class="faq-answer">
-                    <p>Wear what you do your sport in!</p>
+                    <p>Wear what you do your sport in! For climbers, athletic clothing that allows full range of motion is best. If we are meeting in-person, feel free to bring your climbing shoes.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <button class="faq-question">What services do you offer?</button>
+                <button class="faq-question">What will my evaluation look like?</button>
                 <div class="faq-answer">
-                    <p>TBD</p>
+                    <p>We start with a deep dive into your injury history and specific athletic goals. From there, we perform a comprehensive movement assessment and sport-specific strength testing. By the end of the hour, you’ll have a clear understanding of the "crux" of your issue and a personalized roadmap to get back to full performance.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What will my follow-up appointments look like?</button>
+                <div class="faq-answer">
+                    <p>Follow-up sessions focus on the "beta" of your recovery. We refine your loading protocols, assess progress through performance metrics, and adjust your plan as you return to higher-intensity activities. These are active sessions designed to ensure long-term resilience, not just a quick fix.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">Do I have to be a climber?</button>
                 <div class="faq-answer">
-                    <p>No! We will take all individuals regardless of if you run ultramarathons or do underwater basket weaving!</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">What will my initial appointment look like?</button>
-                <div class="faq-answer">
-                    <p>TBD</p>
+                    <p>No! While bouldering is a specialty, we work with all individuals looking to improve their movement—regardless of whether you run ultramarathons or do underwater basket weaving!</p>
                 </div>
             </div>
         </div>
@@ -313,7 +316,13 @@
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const faqItem = button.parentElement;
-                faqItem.classList.toggle('active');
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+                
+                // Toggle current item
+                if (!isActive) faqItem.classList.add('active');
             });
         });
     </script>

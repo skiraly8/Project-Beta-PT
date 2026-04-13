@@ -100,13 +100,13 @@
         .faq-item.active .faq-question::after { transform: rotate(45deg); }
         .faq-item.active .faq-answer { max-height: 1000px; transition: all 0.4s cubic-bezier(1, 0, 1, 0); }
 
-        /* --- CONTACT SECTION WITH BACKGROUND IMAGE --- */
+        /* --- INTAKE SECTION WITH LIGHTER IMAGE --- */
         .contact { 
             padding: 120px 8%; 
             text-align: center; 
             position: relative; 
             z-index: 2; 
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('IMG_8270.JPG');
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('IMG_8270.JPG');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
@@ -123,10 +123,11 @@
         footer { padding: 50px 8%; background: #fff; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
         .footer-info { font-size: 0.8rem; color: #999; }
         .footer-social a { color: var(--dark); text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; transition: 0.3s; }
+        /* FIXED INSTA LOGO SIZE */
+        .footer-social img { width: 20px; height: 20px; object-fit: contain; }
 
         @media (max-width: 900px) {
             .hero, .contact { background-attachment: scroll; }
-            .hero h1 { letter-spacing: -2px; }
             #about { grid-template-columns: 1fr; text-align: center; }
             .nav-links { display: none; }
             footer { flex-direction: column; gap: 20px; text-align: center; }
@@ -237,7 +238,7 @@
                 <button class="faq-question">Do you take insurance?</button>
                 <div class="faq-answer">
                     <p>Pulse Physical Therapy is an out-of-network provider and does not accept insurance. We welcome clients to pay with: Credit, debit, Venmo, and Zelle.</p>
-                    <p>Clients will be offered an itemized receipt of their session (a superbill) that they may submit to their insurance company for reimbursement if they have out-of-network benefits. A superbill is a detailed billing statement that includes ICD-10 codes, CPT codes, total charges, details about the provider, and more.</p>
+                    <p>Clients will be offered an itemized receipt of their session (a superbill) that they may submit to their insurance company for reimbursement if they have out-of-network benefits.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -249,13 +250,7 @@
             <div class="faq-item">
                 <button class="faq-question">What will my evaluation look like?</button>
                 <div class="faq-answer">
-                    <p>We start with a deep dive into your injury history and specific athletic goals. From there, we perform a comprehensive movement assessment and sport-specific strength testing. By the end of the hour, you’ll have a clear understanding of the "crux" of your issue and a personalized roadmap to get back to full performance.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">What will my follow-up appointments look like?</button>
-                <div class="faq-answer">
-                    <p>Follow-up sessions focus on the "beta" of your recovery. We refine your loading protocols, assess progress through performance metrics, and adjust your plan as you return to higher-intensity activities. These are active sessions designed to ensure long-term resilience, not just a quick fix.</p>
+                    <p>We start with a deep dive into your injury history and specific athletic goals. From there, we perform a comprehensive movement assessment and sport-specific strength testing.</p>
                 </div>
             </div>
             <div class="faq-item">
